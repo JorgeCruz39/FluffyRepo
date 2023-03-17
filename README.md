@@ -1,2 +1,2 @@
-# FluffyRepo
-Repo for Projects done inside web dev 2023
+#  The best Course at New Paltz
+## Web Dev Spring 2023
