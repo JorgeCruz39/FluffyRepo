@@ -8,7 +8,7 @@
             Login
         </h1>
         <h2 class="subtitle">
-            If you got here then you are not logged in. <br>
+            If you got here then you are not logged in as admin. <br>
             To login just click the button on the top right corner.
         </h2>
     </div>
