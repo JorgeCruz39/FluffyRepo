@@ -5,22 +5,63 @@
         "name": "Jorge Cruz",
         "email": "jorgeacruz2000@gmail.com",
         "photo": " ",
-        "token": "admin"
-        
+        "token": "admin",
+        "username": "ThisIsTheWay12",
+        "role": "Owner",
+        "TodayDistance": 2.0,
+        "TodayDuration": ":30",
+        "TodayPace": 20,
+        "TodayCalories": 200,
+        "WeeksDistance": 22.0,
+        "WeeksDuration": ":10",
+        "WeeksPace": 2,
+        "WeeksCalories": 2200,
+        "AlltimeDistance": 122.0,
+        "AlltimeDuration": ":30",
+        "AlltimePace": 2,
+        "AlltimeCalories": 9200
       },
         {
             "id": 2,
             "name": "Victor Cruz",
             "email": "jorgeacruz2000@gmail.com",
             "photo": " ",
-            "token": "user"
-        },
+            "token": "user",
+            "username": "BookWarm",
+            "role": "Brother",
+            "TodayDistance": 4.0,
+            "TodayDuration": ":30",
+            "TodayPace": 20,
+            "TodayCalories": 200,
+            "WeeksDistance": 22.0,
+            "WeeksDuration": ":10",
+            "WeeksPace": 2,
+            "WeeksCalories": 2200,
+            "AlltimeDistance": 122.0,
+            "AlltimeDuration": ":30",
+            "AlltimePace": 2,
+            "AlltimeCalories": 9200
+          },
         {
             "id": 3,
             "name": "Jorge Cruz",
             "email": "jorgeacruz2000@gmail.com",
             "photo": " ",
-            "token": "user"
+            "token": "user",
+            "username": "DontBeShy",
+            "role": "Dad",
+            "TodayDistance": 8.0,
+            "TodayDuration": ":30",
+            "TodayPace": 20,
+            "TodayCalories": 200,
+            "WeeksDistance": 22.0,
+            "WeeksDuration": ":10",
+            "WeeksPace": 2,
+            "WeeksCalories": 2200,
+            "AlltimeDistance": 122.0,
+            "AlltimeDuration": ":30",
+            "AlltimePace": 2,
+            "AlltimeCalories": 9200
         }
     ]
 }

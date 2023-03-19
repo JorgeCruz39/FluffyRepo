@@ -24,10 +24,10 @@ function toggledrop() {
   <nav class="navbar is-primary">
     <div class="container">
       <div class="navbar-brand">
-        <a class="navbar-item" href="https://bulma.io">
+        <RouterLink class="navbar-item" to="/homeview">
           <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="28" height="22" />
-        </a>
-          <RouterLink to="/" class="navbar-item">
+        </RouterLink>
+          <RouterLink to="/about" class="navbar-item">
             <span class="icon">
               <i class="fas fa-running"></i>
             </span>
@@ -69,7 +69,7 @@ function toggledrop() {
   </div>
   <div class="dropdown-menu" id="dropdown-menu4" role="menu">
     <div class="dropdown-content">
-        <RouterLink to="/products" class="navbar-item">
+        <RouterLink to="/usersview" class="navbar-item">
             Users
           </RouterLink>
       

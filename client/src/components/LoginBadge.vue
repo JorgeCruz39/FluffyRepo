@@ -39,9 +39,9 @@ function toggledrop() {
       </div>
       <div class="dropdown-menu" id="dropdown-menu2" role="menu">
         <div class="dropdown-content" v-for=" user in users">
-          <div class="dropdown-item">
-            <p @click=login(user)>{{ user.name }}</p>
-          </div>
+          <a class="dropdown-item">
+            <span @click=login(user)>{{ user.name }}</span>
+          </a>
 
         </div>
       </div>
