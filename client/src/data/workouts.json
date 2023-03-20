@@ -1,0 +1,63 @@
+{
+    "workout": [
+      {
+        "username": "ThisIsTheWay12",
+        "workoutType": "Running",
+        "workoutDate": "2019-04-01",
+        "workoutDuration": "00:30:00",
+        "workoutDistance": 4.0,
+        "workoutLongitudeandLatitude": "lat: 41.7459, lng: -74.082",
+        "workoutDescription": "I ran in the Hudson River"
+      },
+      {
+        "username": "BookWarm",
+        "workoutType": "Running",
+        "workoutDate": "2023-03-21",
+        "workoutDuration": ":00:00",
+        "workoutDistance": 4.0,
+        "workoutLongitudeandLatitude": "lat: 41.7459, lng: -74.082",
+        "workoutDescription": "I ran on the first day of spring"
+        },
+      
+      {
+
+        "username": "DontBeShy",
+        "workoutType": "Swimming",
+        "workoutDate": "2019-04-01",
+        "workoutDuration": "00:30:00",
+        "workoutDistance": 4.0,
+        "workoutLongitudeandLatitude": "lat: 41.7459, lng: -74.082",
+        "workoutDescription": "I swam in the Hudson River"
+      },
+
+    
+        {
+        "username": "BookWarm",
+        "workoutType": "weightlifting",
+        "workoutDate": "2023-03-21",
+        "workoutDuration": "01:00:00",
+        "workoutDistance": 0.0,
+        "workoutLongitudeandLatitude": "lat: 41.7459, lng: -74.082",
+        "workoutDescription": "I lifted weights on the first day of spring"
+        },
+
+    {
+        "username": "DontBeShy",
+        "workoutType": "Running",
+        "workoutDate": "2023-06-21",
+        "workoutDuration": "01:00:00",
+        "workoutDistance": 4.0,
+        "workoutLongitudeandLatitude": "lat: 41.7459, lng: -74.082",
+        "workoutDescription": "I ran on the first day of summer"
+    },
+    {
+        "username": "ThisIsTheWay12",
+        "workoutType": "Biking",
+        "workoutDate": "2019-04-01",
+        "workoutDuration": "00:30:00",
+        "workoutDistance": 4.0,
+        "workoutLongitudeandLatitude": "lat: 41.7459, lng: -74.082",
+        "workoutDescription" : "I biked in the Hudson River"
+      }
+    ]
+}

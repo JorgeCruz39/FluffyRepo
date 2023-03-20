@@ -4,6 +4,9 @@ import { getUsers, type User } from '../model/users'
 const users = ref(getUsers());
 
 
+
+
+
 </script>
 
 <template>
@@ -31,7 +34,7 @@ const users = ref(getUsers());
 
             </tr>
             <tr v-for="user in users">
-                <td>{{ user.photo }}</td>
+                <td><img :src="user.photo" alt="avatar"></td>
                 <td>{{ user.name }}</td>
                 <td>{{ user.email }}</td>
                 <td>{{ user.role }}</td>
@@ -59,5 +62,11 @@ const users = ref(getUsers());
 
 
 <style scoped>
+
+img{
+    width: 50px;
+    height: 50px;
+
+}
 
 </style>

@@ -2,10 +2,6 @@
 
 import data from "../data/users.json";
 
-
-
-
-
 export interface User {
     id: number;
     name: string;
@@ -26,6 +22,8 @@ export interface User {
     AlltimeDuration: string;
     AlltimeCalories: number;
     AlltimePace: number;
+
+    
 }
 
 export function getUsers(): User[] {

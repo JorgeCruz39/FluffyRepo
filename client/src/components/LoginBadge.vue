@@ -2,8 +2,10 @@
 import { ref } from 'vue';
 import { useSession, login, useLogout } from '@/model/session';
 import { getUsers, type User } from '../model/users'
+import { getWorkout } from '@/model/workout';
 const session = useSession();
 const logout = useLogout();
+
 
 function logout2() {
   logout();
@@ -11,6 +13,9 @@ function logout2() {
 const isdropActive = ref(false);
 
 const users = ref(getUsers());
+
+
+
 
 function toggledrop() {
   isdropActive.value = !isdropActive.value;
@@ -20,6 +25,9 @@ function toggledrop() {
 
 <template>
   <div class="navbar-item has-dropdown is-hoverable" v-if="session.user">
+    <div class="avatar">
+      <img :src="session.user.photo" alt="avatar">
+    </div>
     <div class="navbar-item">Welcome, {{ session.user.name }}
     <a class="button is-primary" @click="logout2()"><strong>Log out</strong></a></div>
   </div>
@@ -38,16 +46,33 @@ function toggledrop() {
         </button>
       </div>
       <div class="dropdown-menu" id="dropdown-menu2" role="menu">
-        <div class="dropdown-content" v-for=" user in users">
-          <a class="dropdown-item">
+        <div class="dropdown-content" >
+          <a class="dropdown-item" v-for=" user in users">
             <span @click=login(user)>{{ user.name }}</span>
           </a>
 
-        </div>
+        
+        <hr class="dropdown-divider">
+        <a class="dropdown-item">
+          <span>Other Account</span>
+        </a>
+      </div>
       </div>
     </div>
 
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.avatar img{
+    width: 48px;
+    height: 52px;
+    max-height: max-content;
+    border-radius: 10%;
+    overflow: hidden;
+    max-width: 100%;
+    
+    
+}
+
+</style>

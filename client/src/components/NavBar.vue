@@ -27,19 +27,19 @@ function toggledrop() {
         <RouterLink class="navbar-item" to="/homeview">
           <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="28" height="22" />
         </RouterLink>
-          <RouterLink to="/about" class="navbar-item">
+          <RouterLink to="/MyActivity" class="navbar-item">
             <span class="icon">
               <i class="fas fa-running"></i>
             </span>
             <span>My Activity</span>
           </RouterLink>
-          <RouterLink to="/about" class="navbar-item">
+          <RouterLink to="/stats" class="navbar-item">
             <span class="icon">
               <i class="fas fa-chart-line "></i>
             </span>
             <span>Statistics</span>
           </RouterLink>
-          <RouterLink to="/products" class="navbar-item">
+          <RouterLink to="/friendsview" class="navbar-item">
             <span class="icon">
               <i class="fas fa-people-group"></i>
             </span>
@@ -54,7 +54,7 @@ function toggledrop() {
 
       <div class="navbar-menu" :class="{ 'is-active': isMenuActive }">
         <div class="navbar-start">
-          <RouterLink to="/products" class="navbar-item">
+          <RouterLink to="/PeopleSearch" class="navbar-item">
             <span class="icon">
               <i class="fas fa-search"></i>
             </span>

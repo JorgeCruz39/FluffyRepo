@@ -1,6 +1,6 @@
 
 
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 import { useRouter } from "vue-router";
 
 const session = reactive({
@@ -8,10 +8,9 @@ const session = reactive({
 })
 
 interface User {
-    id?: number;
     name: string;
     email?: string;
-    photo?: string;
+    photo: string;
     token?: string;
     role?: string;
     TodayDistance: number;
@@ -26,17 +25,24 @@ interface User {
     AlltimeDuration: string;
     AlltimeCalories: number;
     AlltimePace: number;
+    username: string;
+
     
 }
 
+
+
+
+
 export function useSession() {
-    return session;
+    return session ;
 }
 
 export function login(user: User) {
     session.user = {
         name: user.name,
         token: user.token,
+        username: user.username,
         TodayDistance: user.TodayDistance,
         TodayDuration: user.TodayDuration,
         TodayCalories: user.TodayCalories,
@@ -48,10 +54,22 @@ export function login(user: User) {
         AlltimeDistance: user.AlltimeDistance,
         AlltimeDuration: user.AlltimeDuration,
         AlltimeCalories: user.AlltimeCalories,
-        AlltimePace: user.AlltimePace
+        AlltimePace: user.AlltimePace,
+        photo: user.photo,
+
 
     }
+
+
+
 }
+
+export function logout() {
+    session.user = null;
+}
+
+
+
 
 export function useLogout() {
     const router = useRouter();
@@ -61,3 +79,4 @@ export function useLogout() {
         router.push('');
     }
 }
+
