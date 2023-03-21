@@ -24,10 +24,12 @@ const isFormActive = ref(false);
 
 <template>
     
-        <h1><strong>See Your friends Activity</strong></h1>
+        <h1><strong>See your friends activity</strong></h1>
+            <p v-if="session.user"></p>
+            <p v-else> Hit Log in to add an Activity </p>
         <div class="columns " >
             <div class="column is-half is-offset-one-quarter media">
-                <button  v-if="session.user" class="button is-info is-fullwidth"  @click="toggleForm">Add Workout</button>
+                <button  class="button is-info is-fullwidth"  @click="toggleForm" v-if="session.user">Add Workout</button>
                 <br>
                 <form @submit.prevent="addToWorkout(newWorkout,date,session.user?.username,)" class="modal " :class="{ 'is-active': isFormActive }" >
                     <div class="modal-background"></div>
@@ -68,7 +70,7 @@ const isFormActive = ref(false);
                         </section>
                         <footer class="modal-card-foot">
                             <button class="button is-success" type="submit" @click="toggleForm" >Save changes</button>
-                            <RouterLink to="/MyActivity" class="button"  @click="toggleForm">Cancel</RouterLink>
+                            <RouterLink to="/FriendsView" class="button"  @click="toggleForm">Cancel</RouterLink>
                         </footer>
                     </div>
 
@@ -128,7 +130,7 @@ const isFormActive = ref(false);
                             <nav class="level is-mobile">
                                 <div class="level-left">
                                     <a class="level-item">
-                                        <span class="icon is-small"><i class="fas fa-reply"></i></span>
+                                        <span class="icon is-small"><i class="fas fa-reply" alt="reply"></i></span>
                                     </a>
                                     <a class="level-item">
                                         <span class="icon is-small"><i class="fas fa-retweet"></i></span>

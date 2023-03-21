@@ -39,7 +39,7 @@ function toggledrop() {
             </span>
             <span>Statistics</span>
           </RouterLink>
-          <RouterLink to="/friendsview" class="navbar-item">
+          <RouterLink to="/FriendsView" class="navbar-item">
             <span class="icon">
               <i class="fas fa-people-group"></i>
             </span>

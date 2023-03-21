@@ -22,7 +22,7 @@ const router = createRouter({
     { path: '/MyActivity', name: 'MyActivity', component: MyActivity },
     { path: '/FriendsView', name: 'FriendsActivity', component: FriendsView },
     { path: '/stats', name: 'stats', component: stats },
-    { path: '/FriendsView', name: 'FriendsActivity', component: FriendsView },
+    { path: '/FriendsView', name: 'FriendsView', component: FriendsView },
     { path: '/PeopleSearch', name: 'PeopleSearch', component: PeopleSearch },
     {
       path: '/about',

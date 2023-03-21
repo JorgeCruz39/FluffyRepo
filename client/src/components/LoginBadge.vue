@@ -2,7 +2,6 @@
 import { ref } from 'vue';
 import { useSession, login, useLogout } from '@/model/session';
 import { getUsers, type User } from '../model/users'
-import { getWorkout } from '@/model/workout';
 const session = useSession();
 const logout = useLogout();
 
@@ -28,7 +27,7 @@ function toggledrop() {
     <div class="avatar">
       <img :src="session.user.photo" alt="avatar">
     </div>
-    <div class="navbar-item">Welcome, {{ session.user.name }}
+    <div class="navbar-item"><strong>{{ session.user.name }}</strong>
     <a class="button is-primary" @click="logout2()"><strong>Log out</strong></a></div>
   </div>
   <div class="navbar-item" v-else>
