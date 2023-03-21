@@ -2,7 +2,7 @@
     "workout": [
       {
         "username": "ThisIsTheWay12",
-        "workoutType": "Running",
+        "workoutType": "Run",
         "workoutDate": "2019-04-01",
         "workoutDuration": "00:30:00",
         "workoutDistance": 4.0,
@@ -11,7 +11,7 @@
       },
       {
         "username": "BookWarm",
-        "workoutType": "Running",
+        "workoutType": "Run",
         "workoutDate": "2023-03-21",
         "workoutDuration": ":00:00",
         "workoutDistance": 4.0,
@@ -22,7 +22,7 @@
       {
 
         "username": "DontBeShy",
-        "workoutType": "Swimming",
+        "workoutType": "Swim",
         "workoutDate": "2019-04-01",
         "workoutDuration": "00:30:00",
         "workoutDistance": 4.0,
@@ -33,7 +33,7 @@
     
         {
         "username": "BookWarm",
-        "workoutType": "weightlifting",
+        "workoutType": "Bike",
         "workoutDate": "2023-03-21",
         "workoutDuration": "01:00:00",
         "workoutDistance": 0.0,
@@ -43,7 +43,7 @@
 
     {
         "username": "DontBeShy",
-        "workoutType": "Running",
+        "workoutType": "Run",
         "workoutDate": "2023-06-21",
         "workoutDuration": "01:00:00",
         "workoutDistance": 4.0,
@@ -52,7 +52,7 @@
     },
     {
         "username": "ThisIsTheWay12",
-        "workoutType": "Biking",
+        "workoutType": "Bike",
         "workoutDate": "2019-04-01",
         "workoutDuration": "00:30:00",
         "workoutDistance": 4.0,
