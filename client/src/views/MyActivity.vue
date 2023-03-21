@@ -92,7 +92,7 @@ const isFormActive = ref(false);
                                       <div class="columns">
                                         <div class="column has-text-centered" style="display: flex; justify-content: space-around; align-items: center;">
                                             <div>
-                                                <h1 class=" has-text has-text-weight-bold" style="margin: 0px;"> {{ workoutss1.workoutDistance }}</h1>
+                                                <h1 class=" has-text has-text-weight-bold" style="margin: 0px;"> {{ workoutss1.workoutDistance }} miles</h1>
                                                 <caption class="caption is-half">Distance</caption>
                                             </div>
                                             <div>
@@ -163,5 +163,6 @@ h1{
 
 .down{
     padding-top: 10px;
+    font-size: 28px;
 }
 </style>

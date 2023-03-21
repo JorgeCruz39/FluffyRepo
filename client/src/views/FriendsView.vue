@@ -24,10 +24,10 @@ const isFormActive = ref(false);
 
 <template>
     
-        <h1><strong>My Activity</strong></h1>
-        <div class="columns " v-if="session.user">
+        <h1><strong>See Your friends Activity</strong></h1>
+        <div class="columns " >
             <div class="column is-half is-offset-one-quarter media">
-                <button class="button is-info is-fullwidth"  @click="toggleForm">Add Workout</button>
+                <button  v-if="session.user" class="button is-info is-fullwidth"  @click="toggleForm">Add Workout</button>
                 <br>
                 <form @submit.prevent="addToWorkout(newWorkout,date,session.user?.username,)" class="modal " :class="{ 'is-active': isFormActive }" >
                     <div class="modal-background"></div>
@@ -75,10 +75,18 @@ const isFormActive = ref(false);
                 </form>
 
                 <div v-for="workoutss1 in workouts1.slice().reverse() ">
-                    <article class="media box" div v-if="session.user?.username == workoutss1.username">
+                    <article class="media box">
                         <figure class="media-left">
                             <p class="image is-64x64">
-                                <img :src="session.user.photo">
+                                <div v-if="workoutss1.username == 'ThisIsTheWay12'" >
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Mandalorian_mural%2C_This_is_the_way%2C_detail%2C_Piotrkowska_146%2C_%C5%81%C3%B3d%C5%BA%2C_2023-03-12%2C_02.jpg">
+                                </div>
+                                <div v-else-if ="workoutss1.username == 'BookWarm'">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Jabba_the_Hutt.jpg">
+                                </div>
+                                <div v-else-if ="workoutss1.username == 'DontBeShy'">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Grabill_-_The_Cow_Boy-edit.jpg/640px-Grabill_-_The_Cow_Boy-edit.jpg">
+                                </div>
                             </p>
                         </figure>
                         <div class="media-content">
@@ -92,7 +100,7 @@ const isFormActive = ref(false);
                                       <div class="columns">
                                         <div class="column has-text-centered" style="display: flex; justify-content: space-around; align-items: center;">
                                             <div>
-                                                <h1 class=" has-text has-text-weight-bold" style="margin: 0px;"> {{ workoutss1.workoutDistance }}</h1>
+                                                <h1 class=" has-text has-text-weight-bold" style="margin: 0px;"> {{ workoutss1.workoutDistance }} miles </h1>
                                                 <caption class="caption is-half">Distance</caption>
                                             </div>
                                             <div>
@@ -168,5 +176,10 @@ const isFormActive = ref(false);
 
 h1{
     font-size: 32px;
+}
+
+.down{
+    padding-top: 10px;
+    font-size: 28px;
 }
 </style>
