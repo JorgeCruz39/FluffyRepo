@@ -7,7 +7,8 @@
         "workoutDuration": "00:30:00",
         "workoutDistance": 4.0,
         "workoutLongitudeandLatitude": "lat: 41.7459, lng: -74.082",
-        "workoutDescription": "I ran in the Hudson River"
+        "workoutDescription": "I ran in the Hudson River",
+        "caloriesBurned": 100
       },
       {
         "username": "BookWarm",
@@ -16,7 +17,8 @@
         "workoutDuration": ":00:00",
         "workoutDistance": 4.0,
         "workoutLongitudeandLatitude": "lat: 41.7459, lng: -74.082",
-        "workoutDescription": "I ran on the first day of spring"
+        "workoutDescription": "I ran on the first day of spring",
+        "caloriesBurned": 1000
         },
       
       {
@@ -27,7 +29,8 @@
         "workoutDuration": "00:30:00",
         "workoutDistance": 4.0,
         "workoutLongitudeandLatitude": "lat: 41.7459, lng: -74.082",
-        "workoutDescription": "I swam in the Hudson River"
+        "workoutDescription": "I swam in the Hudson River",
+        "caloriesBurned": 0
       },
 
     
@@ -38,7 +41,8 @@
         "workoutDuration": "01:00:00",
         "workoutDistance": 0.0,
         "workoutLongitudeandLatitude": "lat: 41.7459, lng: -74.082",
-        "workoutDescription": "I lifted weights on the first day of spring"
+        "workoutDescription": "I lifted weights on the first day of spring",
+        "caloriesBurned": 1000
         },
 
     {
@@ -48,7 +52,8 @@
         "workoutDuration": "01:00:00",
         "workoutDistance": 4.0,
         "workoutLongitudeandLatitude": "lat: 41.7459, lng: -74.082",
-        "workoutDescription": "I ran on the first day of summer"
+        "workoutDescription": "I ran on the first day of summer",
+        "caloriesBurned":0
     },
     {
         "username": "ThisIsTheWay12",
@@ -57,7 +62,8 @@
         "workoutDuration": "00:30:00",
         "workoutDistance": 4.0,
         "workoutLongitudeandLatitude": "lat: 41.7459, lng: -74.082",
-        "workoutDescription" : "I biked in the Hudson River"
+        "workoutDescription" : "I biked in the Hudson River",
+        "caloriesBurned": 100
       }
     ]
 }

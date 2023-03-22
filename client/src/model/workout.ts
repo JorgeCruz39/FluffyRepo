@@ -1,5 +1,5 @@
 import data from "../data/workouts.json";
-import { reactive, ref } from "vue";
+import { computed, reactive, ref } from "vue";
 import { useSession } from "./session";
 
 
@@ -20,6 +20,7 @@ export interface Workout {
     workoutDuration: string;
     workoutLongitudeandLatitude: string;
     workoutDescription: string;
+    caloriesBurned: number;
 
 }
 
@@ -41,6 +42,7 @@ export function addToWorkout(workie:Workout, workoutDate : Date, username: strin
         workoutDuration: workie.workoutDuration,
         workoutLongitudeandLatitude: workie.workoutLongitudeandLatitude,
         workoutDescription: workie.workoutDescription,
+        caloriesBurned: workie.caloriesBurned,
     });
 }
 export function useWorkout() {
@@ -51,3 +53,6 @@ export function useWorkout() {
 export function getWorkout(): Workout[] {
     return data.workout;
 }
+
+
+export const caloriesBurned = computed(() => workouts.value.reduce((total, item) => total + item.caloriesBurned, 0));

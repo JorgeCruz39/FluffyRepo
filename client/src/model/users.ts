@@ -1,6 +1,11 @@
 
 
 import data from "../data/users.json";
+import { computed, reactive, ref } from "vue";
+import { useSession } from "./session";
+
+const users = ref([] as User[]);
+const session = useSession();
 
 export interface User {
     id: number;
@@ -22,10 +27,20 @@ export interface User {
     AlltimeDuration: string;
     AlltimeCalories: number;
     AlltimePace: number;
-
+    
     
 }
 
 export function getUsers(): User[] {
     return data.User;
 }
+
+export function addCalories(calories: number) {
+    if (session.user) {
+        session.user.TodayCalories += calories;
+        session.user.WeeksCalories += calories;
+        session.user.AlltimeCalories += calories;
+
+    }
+}
+

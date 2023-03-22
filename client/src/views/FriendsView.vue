@@ -2,6 +2,7 @@
 import { useSession } from '@/model/session';
 import { ref } from 'vue';
 import { addToWorkout, getWorkout, useWorkout, type Workout } from '@/model/workout';
+import {addCalories} from '@/model/users';
 
 
 
@@ -51,9 +52,9 @@ const isFormActive = ref(false);
                                 </div>
                             </div>
                             <div class="field">
-                                <label class="label">Duration</label>
+                                <label class="label">Calories</label>
                                 <div class="control">
-                                    <input v-model="newWorkout.workoutDuration" class="input" type="text" placeholder="Duration" >
+                                    <input v-model="newWorkout.caloriesBurned" class="input" type="number" placeholder="Calories Burned"  >
                                 </div>
                             </div>
                             <div class="field">
@@ -69,7 +70,7 @@ const isFormActive = ref(false);
                                 
                         </section>
                         <footer class="modal-card-foot">
-                            <button class="button is-success" type="submit" @click="toggleForm" >Save changes</button>
+                            <button class="button is-success" type="submit" @click="toggleForm, addCalories(newWorkout.caloriesBurned)" >Save changes</button>
                             <RouterLink to="/FriendsView" class="button"  @click="toggleForm">Cancel</RouterLink>
                         </footer>
                     </div>
@@ -95,7 +96,7 @@ const isFormActive = ref(false);
                             <div class="content">
                                 <p>
                                     <strong class="space"> {{ workoutss1.username }} </strong>
-                                     <small class="space"> {{  workoutss1.username }}   </small>
+                                     <small class="space"> @{{  workoutss1.username }}   </small>
                                      <small class="space"> {{ workoutss1.workoutDate }}</small>
                                      <br>
                                      <p class="down"> <strong> Excecise done : {{ workoutss1.workoutType }}</strong></p>
@@ -106,8 +107,8 @@ const isFormActive = ref(false);
                                                 <caption class="caption is-half">Distance</caption>
                                             </div>
                                             <div>
-                                                <h1 class=" has-text has-text-weight-bold" style="margin: 0px;"> {{ workoutss1.workoutDuration }}</h1>
-                                                <caption class="caption">Duration</caption>
+                                                <h1 class=" has-text has-text-weight-bold" style="margin: 0px;"> {{ workoutss1.caloriesBurned }}</h1>
+                                                <caption class="caption">Calories</caption>
                                             </div>
                                         </div>
                                         <div class="column" v-if="workoutss1.workoutType== 'Run' " >

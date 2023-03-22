@@ -3,8 +3,9 @@ import { ref } from 'vue';
 import { useSession, login, useLogout } from '@/model/session';
 import { getUsers } from '../model/users'
 import type { sequenceExpression } from '@babel/types';
+import { getWorkout } from '@/model/workout';
 const session = useSession();
-const users = ref(getUsers());
+const workouts1 = getWorkout();
 
 </script>
 
@@ -18,7 +19,7 @@ const users = ref(getUsers());
         </div>
         <div class="column" v-if="session.user">
           <div class="box has-text-centered ">
-            <h1 class=""><strong>Today</strong></h1>
+            <h1 class=""><strong>This Session</strong></h1>
             <div class="columns is-multiline has-text-success ">
               <div class="column is-half">
                 <h1 class="quarter has-text-success has-text-weight-bold	">{{ session.user.TodayDistance }} mi</h1>
@@ -98,7 +99,7 @@ const users = ref(getUsers());
                 <caption class="caption">Avg Pace</caption>
               </div>
               <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	"> 0 mi</h1>
+                <h1 class="quarter has-text-success has-text-weight-bold	"> 0 </h1>
                 <caption class="caption">Calories</caption>
               </div>
             </div>
@@ -119,7 +120,7 @@ const users = ref(getUsers());
                 <caption class="caption">Avg Pace</caption>
               </div>
               <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	"> 0 mi</h1>
+                <h1 class="quarter has-text-success has-text-weight-bold	"> 0 </h1>
                 <caption class="caption">Calories</caption>
               </div>
             </div>
@@ -140,7 +141,7 @@ const users = ref(getUsers());
                 <caption class="caption">Avg Pace</caption>
               </div>
               <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	"> 0 mi</h1>
+                <h1 class="quarter has-text-success has-text-weight-bold	"> 0 </h1>
                 <caption class="caption">Calories</caption>
               </div>
             </div>
