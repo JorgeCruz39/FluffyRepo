@@ -143,7 +143,7 @@ const isFormActive = ref(false);
             </div>
             </div>
             <div v-else>
-                <h1> Log In to see your progressu</h1>
+                <h1> Log In to see your progress</h1>
             </div>
 
 </template>
