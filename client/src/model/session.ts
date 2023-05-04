@@ -108,9 +108,9 @@ export function useWorkout() {
 
 //function to add a workout to the user 
 
-export function addWorkout(workout: string, weight: number) {
+export function addWorkout(workout: string, weight: number,reps:number) {
     if(workout !== "" && weight > 0)
-   { session.user?.workouts.push({workout, weight});}
+   { session.user?.workouts.push({workout, weight,reps});}
 }
 
 

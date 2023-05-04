@@ -8,11 +8,11 @@ import { ref } from "vue";
 
 const session = useSession();
 
-const collectionWorkouts = ref(useWorkoutCollection() as any);
-
+//reps didnt work
 export interface Workout {
     workout: string;
     weight: number;
+    reps: number;
 }
 
 

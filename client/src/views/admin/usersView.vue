@@ -6,28 +6,23 @@ const USASS = ref<User[]>([]);
  getUsers().then((data) => {
      USASS.value = data.data;
  });
-
-
 </script>
-
-
 <template>
     <div>
         <div class="container">
             <table class="table is-bordered is-narrow is-hoverable ">
                 <thead>
                     <tr>
-                        <th class="title is-5">Name</th>
-                        <th class="title is-5">Email</th>
-                        <th class="title is-5">Admin</th>
-                        
+                        <th class="title is-6">Name</th>
+                        <th class="title is-6">Email</th>
+                        <th class="title is-6">Admin</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="(user, index) in USASS" :key="index">
-                        <td class="title is-5">{{user?.name}}</td>
-                        <td class="title is-5">{{user?.email}}</td>
-                        <td class="title is-5">{{user?.isAdmin}}</td>
+                        <td class="title is-6">{{user?.name}}</td>
+                        <td class="title is-6">{{user?.email}}</td>
+                        <td class="title is-6">{{user?.isAdmin}}</td>
                     </tr>
                 </tbody>
             </table>
