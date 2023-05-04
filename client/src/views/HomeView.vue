@@ -15,7 +15,7 @@ const session = useSession();
    <div class="container">
       <div class="columns">
          <div class="column">
-            <div class="clean is-primary">
+            <div class="is-primary">
                <div class="title"> Just This Week</div>
                <WorkoutBox />
                <hr>
@@ -31,7 +31,7 @@ const session = useSession();
             </div>
          </div>
          <div class="column">
-            <div class=" clean is-light">
+            <div class="  is-light">
                <div class="title"> All Time</div>
                <WorkoutBox >
                   <template #totalWeight> 

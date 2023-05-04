@@ -82,7 +82,7 @@ const weight = ref(0)
                         <label for="weight">Weight:</label>
                         <input type="number" id="weight" name="weight" v-model="weight">
                     </form>
-
+                    <!--I could of made these their own component to avoid the repearing number switch issue-->
                     <br>
                     <p>
                         <button class="button is-primary" @click="addToWorkoutCollection(excercise,weight,sets,reps)">Add excercise to workouts +</button>

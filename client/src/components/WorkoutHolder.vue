@@ -17,7 +17,7 @@ const workoutCollection = useWorkoutCollection();
                 <b>{{ item.product.exercise }}</b>
                 <p>
                     ${{ item.product.bodyPart }}
-                    x
+                    
                     <select v-model="item.quantity" class="quantity-dropdown">
                         <option v-for="n in 10" :key="n" :value="n">{{ n }}</option>
                     </select>

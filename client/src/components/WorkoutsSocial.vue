@@ -1,14 +1,24 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import { defineProps } from 'vue';
-import { recentWorkie, useSession } from '@/model/session';
+import { useSession } from '@/model/session';
+
+
+
+//set up user workouts doesnt work F
+
 const props = defineProps({
   workout: {
     type: Object,
     required: true
   }
+
 });
+
+
 const session = useSession();
+
+
+
+
 </script>
 <template>
   <div class="column is-half">

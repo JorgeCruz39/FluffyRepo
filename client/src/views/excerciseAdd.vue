@@ -1,6 +1,4 @@
 <script setup lang="ts">
-
-import type { Product } from '@/model/products';
 import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { getExcercises, createExcercise, type Excercise } from '@/model/Excercise';

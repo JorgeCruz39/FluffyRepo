@@ -2,7 +2,6 @@ import type { DataEnvelope, DataListEnvelope } from "./myFetch";
 import { api,  useSession } from "./session";
 import { reactive } from "vue";
 import workouts from "../data/excercisessimple.json"
-import type {WorkoutItem } from "./workoutCollection";
 import { useWorkoutCollection } from '../model/workoutCollection';
 import { ref } from "vue";
 

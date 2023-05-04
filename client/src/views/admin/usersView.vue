@@ -14,7 +14,7 @@ const USASS = ref<User[]>([]);
 <template>
     <div>
         <div class="container">
-            <table class="table is-bordered is-narrow is-hoverable">
+            <table class="table is-bordered is-narrow is-hoverable ">
                 <thead>
                     <tr>
                         <th class="title is-5">Name</th>

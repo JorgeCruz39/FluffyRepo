@@ -2,14 +2,11 @@
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
 import { quantity } from '../model/cart';
-import Cart from './workouttKeeper.vue';
-import Flyout from './Flyout.vue';
 import LoginBadge from './LoginBadge.vue';
 import Notifications from './Notifications.vue';
 import { useSession } from '@/model/session';
 const session = useSession();
 const isMenuActive = ref(false);
-const isCartActive = ref(false);
 
 function toggleMenu() {
   isMenuActive.value = !isMenuActive.value;
@@ -41,11 +38,11 @@ function toggleMenu() {
 
 
           <div class="navbar-item has-dropdown is-hoverable" v-if="session.user?.isAdmin">
-            <a class="navbar-link" href="">
+            <div class="navbar-link">
               Admin
-            </a>
+            </div>
             <div class="navbar-dropdown">
-              <RouterLink class="navbar-item" to="/admin/products">
+              <RouterLink class="navbar-item" to="/admin/BetaView">
                 BETA excercise add
               </RouterLink>
               <RouterLink class="navbar-item" to="/admin/usersView">

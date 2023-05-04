@@ -2,7 +2,6 @@
 import router from "@/router";
 import { useSession, loginWithServer, type User, loginWithUser,useLogin } from "../model/session";
 import { ref } from "vue";
-import { useRouter } from "vue-router";
 import { addMessage } from "../model/session";
 
 
