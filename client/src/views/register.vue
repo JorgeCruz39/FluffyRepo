@@ -22,7 +22,7 @@ function save() {
     } else {
         createUser(user.value).then((data) => {
             console.log(data)
-            addMessage('New User Added', 'info')
+            addMessage('New User Added', 'success')
         })
     }
 }
@@ -40,7 +40,7 @@ function save() {
 
         <form class="admin-user-edit" @submit.prevent="save()">
 
-            <h1 class="title" >Add New User</h1>
+            <h1 class="title">Add New User</h1>
 
             <div class="field">
                 <label class="label">Name</label>
@@ -67,8 +67,8 @@ function save() {
                     <button class="button is-primary">Submit</button>
                 </div>
                 <div class="control">
-                    <RouterLink to="/home">
-                        <button class="button is-link is-light">Cancel</button>
+                    <RouterLink to="/about">
+                        <button class="button is-link is-danger">Cancel</button>
                     </RouterLink>
                 </div>
             </div>
