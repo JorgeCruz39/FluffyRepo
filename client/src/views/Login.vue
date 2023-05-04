@@ -1,11 +1,8 @@
 <script setup lang="ts">
 import router from "@/router";
-import { useSession, loginWithServer, type User, loginWithUser,useLogin } from "../model/session";
+import { useSession, loginWithServer } from "../model/session";
 import { ref } from "vue";
 import { addMessage } from "../model/session";
-
-
-
 const session = useSession();
 const email = ref('');
 const password = ref('');
@@ -54,7 +51,7 @@ function login() {
     
             <div class="field">
                 <div class="control">
-                    <button class="button is-link" @click="login">Login</button>
+                    <button class="button is-primary" @click="login">Login</button>
                 </div>
             </div>
             <div class="field">

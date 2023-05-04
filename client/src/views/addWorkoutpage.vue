@@ -32,7 +32,7 @@ function toggleWorkout() {
                         </div>
                     </div>
                 </div>
-                <div class="button  is-fullwidth" @click="toggleWorkout"> Add Workout</div>
+                <div class="button is-primary" @click="toggleWorkout"> Add Workout</div>
             </div>
         </div>
     </div>
@@ -47,10 +47,9 @@ function toggleWorkout() {
     padding: 2.5rem;
     margin: 12rem;
     border-radius: 10%;
-    font-size: 15px;
+    font-size: 30px;
     font-weight: bold;
-    text-decoration: none;
-    display: inline-block;
+    text-decoration: solid;
     box-shadow: 10px 10px rgb(0, 0, 0);
     border-radius: 10px;
     transition: all 1s;
@@ -62,6 +61,25 @@ function toggleWorkout() {
     font-family: 'Montserrat', sans-serif;
 }
 
+.button:hover{
+    background-color: #000000;
+    color: white;
+    padding: 2.5rem;
+    margin: 12rem;
+    border-radius: 10%;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: solid;
+    box-shadow: 10px 10px rgb(0, 0, 0);
+    border-radius: 10px;
+    transition: all 1s;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
 
 .modal {
     display: block;
