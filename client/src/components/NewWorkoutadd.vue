@@ -7,15 +7,16 @@ const toggle = ref(false);
 
 
 
-function addWorkoutToUser(workoutName: string, workoutWeight: number) {
-    addWorkout(workoutName, workoutWeight);
+function addWorkoutToUser(workoutName: string, workoutWeight: number,workoutReps: number) {
+    addWorkout(workoutName, workoutWeight,workoutReps);
 }
-function saveWrk(workoutName: string, workoutWeight: number) {
-    addWorkoutToUser(workoutName, workoutWeight);
+function saveWrk(workoutName: string, workoutWeight: number,workoutReps: number) {
+    addWorkoutToUser(workoutName, workoutWeight,workoutReps);
     updateUser(session.user as User);
 }
 const workoutName = ref('');
 const workoutWeight = ref(0);
+const workoutReps = ref(0);
 </script>
 <template>
     <div>
@@ -34,6 +35,12 @@ const workoutWeight = ref(0);
                     <label class="strong">Weight</label>
                     <div class="control">
                         <input type="number" required v-model="workoutWeight">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="strong">Reps</label>
+                    <div class="control">
+                        <input type="number" required v-model="workoutReps">
                     </div>
                 </div>
                 <div class="field">
@@ -59,7 +66,7 @@ const workoutWeight = ref(0);
                 </div>
             </section>
             <footer class="modal-card-foot">
-                <button class="button is-success" @click="saveWrk(workoutName, workoutWeight), $emit('close')">Add</button>
+                <button class="button is-success" @click="saveWrk(workoutName, workoutWeight, workoutReps), $emit('close')">Add</button>
                 <button class="button is-danger" @click="$emit('close')">Cancel</button>
             </footer>
         </div>

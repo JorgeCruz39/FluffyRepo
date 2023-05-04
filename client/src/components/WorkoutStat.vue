@@ -7,7 +7,7 @@ const user = ref(session.user);
 </script>
 <template>
     <div class=" box has-text-info ">
-        <h2 class="title is-4">Weight Lifting #s done by {{ session.user?.name }} </h2>
+        <h2 class="title is-4">Weight Lifting numbers done by {{ session.user?.name }} </h2>
         <div class="columns">
             <div class="column">
                 <div class=" has-text is-primary">

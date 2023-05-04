@@ -36,7 +36,7 @@ function login() {
         <div class="form box">
 
             <h1 class="title">Login</h1>
-            <h2 class="subtitle">Please enter your credentials</h2>
+            <h2 class="subtitle">Login to continue</h2>
     
             <div class="field">
                 <label class="label">Email</label>

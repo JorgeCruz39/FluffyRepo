@@ -38,7 +38,7 @@ const session = useSession();
           <p>
             <strong>{{ session.user?.name }}</strong> <small>@{{ session.user?.name }}</small> <small></small>
             <br>
-          <p class="words">New Excercise Added: {{ props.workout.workout }} for {{ props.workout.weight }} lbs</p>
+          <p class="words">New Excercise Added: {{ props.workout.workout }} at {{ props.workout.weight }} lbs for {{ props.workout.reps }} reps</p>
           </p>
         </div>
         <nav class="level">
