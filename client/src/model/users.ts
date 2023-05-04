@@ -1,46 +1,45 @@
+/*  B"H
+*/
 
-
-import data from "../data/users.json";
-import { computed, reactive, ref } from "vue";
-import { useSession } from "./session";
-
-const users = ref([] as User[]);
-const session = useSession();
+import type { DataEnvelope, DataListEnvelope } from "./myFetch";
+import { api } from "./session";
 
 export interface User {
-    id: number;
-    name: string;
+    _id: string;
     email: string;
-    photo: string;
-    token: string;
+    firstName: string;
+    lastName: string;
+    password: string;
     role: string;
-    username: string;
-    TodayDistance: number;
-    TodayDuration: string;
-    TodayCalories: number;
-    TodayPace: number;
-    WeeksDistance: number;
-    WeeksDuration: string;
-    WeeksCalories: number;
-    WeeksPace: number;
-    AlltimeDistance: number;
-    AlltimeDuration: string;
-    AlltimeCalories: number;
-    AlltimePace: number;
-    
+    token: string;
     
 }
 
-export function getUsers(): User[] {
-    return data.User;
+export function getUsers(): Promise<DataListEnvelope<User>> {
+
+    return api('users')
+
 }
 
-export function addCalories(calories: number) {
-    if (session.user) {
-        session.user.TodayCalories += calories;
-        session.user.WeeksCalories += calories;
-        session.user.AlltimeCalories += calories;
+export function getUser(id: number): Promise<DataEnvelope<User>> {
 
-    }
+    return api(`users/${id}`)
+
 }
 
+export function createUser(user: User): Promise<DataEnvelope<User>> {
+
+    return api('users/', user, 'POST')
+}
+
+export function deleteUser(id: number): Promise<void> {
+    
+    return api(`users/${id}`, undefined, 'DELETE')
+
+}
+
+export function updateUser(user: User): Promise<DataEnvelope<User>> {
+
+    return api(`users/`, user, 'PUT')
+
+}

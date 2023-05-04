@@ -3,7 +3,6 @@ const jwt = require('jsonwebtoken');
 const { connect, ObjectId } = require('./mongo');
 const { env } = require('process');
 const data = require('../data/users.json');
-
 const COLLECTION_NAME = 'users';
 
 
@@ -70,7 +69,7 @@ async function search(searchTerm, page = 1, pageSize = 30) {
 
 async function seed() {
     const col = await collection();
-    const result = await col.insertMany(data);
+    const result = await col.insertMany(data.users);
     return result.insertedCount;
 }
 

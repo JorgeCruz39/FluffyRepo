@@ -4,7 +4,7 @@ const { requireLogin } = require('../middleware/authorization');
 const router = express.Router();
 
 router
-    .get('/', requireLogin(true) , (req, res, next) => {
+    .get('/',  (req, res, next) => {
         model.getAll(+req.query.page, +req.query.pageSize)
             .then(list => {
                 const data = { data: list.items, total: list.total, isSuccess: true };
@@ -22,7 +22,7 @@ router
         
     })
 
-    .get('/:id', requireLogin() ,(req, res, next) => {
+    .get('/:id', (req, res, next) => {
 
         model.getById(req.params.id)
             .then(x => {
@@ -32,7 +32,7 @@ router
 
     })
 
-    .post('/', requireLogin(true) ,(req, res, next) => {
+    .post('/',(req, res, next) => {
     
         model.add(req.body)
             .then(x => {
@@ -42,7 +42,7 @@ router
 
     })
 
-    .patch('/', requireLogin(true) ,(req, res, next) => {
+    .patch('/', (req, res, next) => {
 
         model.update(req.body)
             .then(x => {

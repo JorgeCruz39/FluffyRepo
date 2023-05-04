@@ -1,180 +1,117 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import { useSession, login, useLogout } from '@/model/session';
-import { getUsers } from '../model/users'
-import type { sequenceExpression } from '@babel/types';
-import { getWorkout } from '@/model/workout';
+import WorkoutBox from '@/components/WorkoutStat.vue'
+import { useSession, totalWeight } from '@/model/session';
+
+
 const session = useSession();
-const workouts1 = getWorkout();
 
 </script>
 
 <template>
-  <main>
-    <div class="container">
-      <div class="columns block">
-        <div class="column is-one-quarter">
-          <div class="box"></div>
 
-        </div>
-        <div class="column" v-if="session.user">
-          <div class="box has-text-centered ">
-            <h1 class=""><strong>This Session</strong></h1>
-            <div class="columns is-multiline has-text-success ">
-              <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	">{{ session.user.TodayDistance }} mi</h1>
-                <caption class="caption ">Distance</caption>
-              </div>
-              <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	"> {{session.user.TodayDuration }} </h1>
-                <caption class="caption">Duration</caption>
-              </div>
-              <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	"> {{session.user.TodayPace }} MPH</h1>
-                <caption class="caption">Avg Pace</caption>
-              </div>
-              <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	"> {{session.user.TodayCalories}}</h1>
-                <caption class="caption">Calories</caption>
-              </div>
-            </div>
-          </div>
-          <div class="box has-text-centered ">
-            <h1 class=""><strong>This Week</strong></h1>
-            <div class="columns is-multiline has-text-success ">
-              <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	"> {{ session.user.WeeksDistance }} mi</h1>
-                <caption class="caption">Distance</caption>
-              </div>
-              <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	"> {{ session.user.WeeksDuration }}</h1>
-                <caption class="caption">Duration</caption>
-              </div>
-              <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	"> {{ session.user.WeeksPace}} MPH</h1>
-                <caption class="caption">Avg Pace</caption>
-              </div>
-              <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	">{{ session.user.WeeksCalories }}</h1>
-                <caption class="caption">Calories</caption>
-              </div>
-            </div>
-          </div>
-          <div class="box has-text-centered ">
-            <h1 class=""><strong>All Time</strong></h1>
-            <div class="columns is-multiline has-text-success ">
-              <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	"> {{ session.user.AlltimeDistance }} mi</h1>
-                <caption class="caption">Distance</caption>
-              </div>
-              <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	"> {{ session.user.AlltimeDuration }}</h1>
-                <caption class="caption">Duration</caption>
-              </div>
-              <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	"> {{ session.user.AlltimePace }} mph</h1>
-                <caption class="caption">Avg Pace</caption>
-              </div>
-              <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	"> {{ session.user.AlltimeCalories }}</h1>
-                <caption class="caption">Calories</caption>
-              </div>
-            </div>
-          </div>
-        </div>
-          <div class="column" v-else>
-          <div class="box has-text-centered ">
-            <h1 class=""><strong>Today</strong></h1>
-            <div class="columns is-multiline has-text-success ">
-              <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	"> 0 mi</h1>
-                <caption class="caption">Distance</caption>
-              </div>
-              <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	"> 0 mi</h1>
-                <caption class="caption">Duration</caption>
-              </div>
-              <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	"> NaN mph </h1>
-                <caption class="caption">Avg Pace</caption>
-              </div>
-              <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	"> 0 </h1>
-                <caption class="caption">Calories</caption>
-              </div>
-            </div>
-          </div>
-          <div class="box has-text-centered ">
-            <h1 class=""><strong>This Week</strong></h1>
-            <div class="columns is-multiline has-text-success ">
-              <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	"> 0 mi</h1>
-                <caption class="caption">Distance</caption>
-              </div>
-              <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	"> 0 mi</h1>
-                <caption class="caption">Duration</caption>
-              </div>
-              <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	"> NaN mph</h1>
-                <caption class="caption">Avg Pace</caption>
-              </div>
-              <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	"> 0 </h1>
-                <caption class="caption">Calories</caption>
-              </div>
-            </div>
-          </div>
-          <div class="box has-text-centered ">
-            <h1 class=""><strong>All Time</strong></h1>
-            <div class="columns is-multiline has-text-success ">
-              <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	"> 0 mi</h1>
-                <caption class="caption">Distance</caption>
-              </div>
-              <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	"> 0 mi</h1>
-                <caption class="caption">Duration</caption>
-              </div>
-              <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	"> NaN mph</h1>
-                <caption class="caption">Avg Pace</caption>
-              </div>
-              <div class="column is-half">
-                <h1 class="quarter has-text-success has-text-weight-bold	"> 0 </h1>
-                <caption class="caption">Calories</caption>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="column is-one-quarter">
-          <div class="box"></div>
 
-        </div>
+ 
+<div v-if="session.user">
+   <div class="container">
+      <div class="columns">
+         <div class="column">
+            <div class="clean is-primary">
+               <div class="title"> Just This Week</div>
+               <WorkoutBox />
+               <hr>
+               <div class="title"> Previous </div>
+               <WorkoutBox >
+                  <template #totalWeight> 
+                     {{ totalWeight }}
+                  </template>
+                  <template #totalLifts>
+                     {{ session.user.workouts.length }}
+                  </template>
+               </WorkoutBox>
+            </div>
+         </div>
+         <div class="column">
+            <div class=" clean is-light">
+               <div class="title"> All Time</div>
+               <WorkoutBox >
+                  <template #totalWeight> 
+                     {{ totalWeight }}
+                  </template>
+                  <template #totalLifts>
+                     {{ session.user.workouts.length }}
+                  </template>
+               </WorkoutBox>
+               <hr>
+               <div class="title"> Today</div>
+               <WorkoutBox >
+                  <template #totalWeight> 
+                     {{ totalWeight }}
+                  </template>
+                  <template #totalLifts>
+                     {{ session.user.workouts.length }}
+                  </template>
+               </WorkoutBox>
+
+            </div>
+         </div>
       </div>
-    </div>
+   </div>
+</div>
+<div class="notLoggedin " v-else>
+You are not Logged in!
+</div>
 
-  </main>
+
+    
+
+
+  
 </template>
 
+<style scoped>
 
-<style>
-
-@media (min-width: 1024px) {
-  .title {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-
-  .quarter{
-
-    font-size: 56px;
-  }
-
+.container{
+      padding: 0;
+      margin: 0;
+      background-color: transparent;
+   }
+   .title{
+      
+      padding: 0;
+      margin: 20px;
+      background-color: transparent;
+      
+      
+   }
+    .clean{
+        padding: 0;
+        margin: 0;
+        background-color: rgba(255, 214, 190, 0.836);
+   }
+   .column{
+      padding: 1rem;
+      margin: 1rem;
+      background-color: transparent;
+   }
+   .box{
+      background-color: white;
+      color: white;
+      padding: 1rem;
+      margin: 1rem;
+      border-radius: 0;
+   }
+   
+   
+   .notLoggedin{
+    margin-top: 5rem;
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: black;
 }
 
-caption {
-  padding-left: 117px;
-}
+  
+
 </style>
